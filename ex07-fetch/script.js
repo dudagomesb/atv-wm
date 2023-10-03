@@ -7,13 +7,15 @@ const exibirLista = (lista, start) => {
   listaPessoas.start = start;
   for (let i = 0; i < lista.length; ++i) {
     const li = document.createElement("li");
+    const numero = start + i; // Calcula o número da entrada na lista
     const text = document.createTextNode(
-      `${lista[i].name} (${lista[i].birth_year}) (${lista[i].height} cm)`
+      `${numero}. ${lista[i].name} (${lista[i].birth_year}) (${lista[i].height} cm)`
     );
     li.appendChild(text);
     listaPessoas.appendChild(li);
   }
 };
+
 
 const configurarBotoes = (data) => {
   const { previous, next } = data;
